@@ -7,6 +7,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.springframework.boot.test.mock.mockito.MockBean;
 
 import com.sd.springboot.services.WelcomeService;
 
@@ -16,11 +17,12 @@ import com.sd.springboot.services.WelcomeService;
  */
 public class WelcomeServiceTest {
 
+	@MockBean
 	private WelcomeService welcomeService;
 	
 	@Before
 	public void initAll() {
-		welcomeService = new WelcomeService();
+		//welcomeService = new WelcomeService();
 	}
 	@Test
     public void getWelcomeMessageTest() {
