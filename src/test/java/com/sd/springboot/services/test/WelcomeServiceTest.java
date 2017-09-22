@@ -20,7 +20,7 @@ public class WelcomeServiceTest {
 	
 	@Before
 	public void initAll() {
-		welcomeService = new WelcomeService();
+		//welcomeService = new WelcomeService();
 	}
 	@Test
     public void getWelcomeMessageTest() {
