@@ -29,6 +29,9 @@ public class User implements Serializable{
 	@Column(name="rolid")
 	private int roleid;
 
+	@Column(name="enabled")
+	private boolean enabled;
+	
 	public int getId() {
 		return id;
 	}
@@ -59,6 +62,14 @@ public class User implements Serializable{
 
 	public void setRoleid(int roleid) {
 		this.roleid = roleid;
+	}
+
+	public boolean isEnabled() {
+		return enabled;
+	}
+
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
 	}
 
 }
