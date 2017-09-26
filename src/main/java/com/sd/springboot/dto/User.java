@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -26,8 +28,9 @@ public class User implements Serializable{
 	@Column(name="password")
 	private String password;
 	
-	@Column(name="rolid")
-	private int roleid;
+	@ManyToOne
+	@JoinColumn(name="role_id")
+	private Role role;
 
 	@Column(name="enabled")
 	private boolean enabled;
@@ -56,12 +59,12 @@ public class User implements Serializable{
 		this.password = password;
 	}
 
-	public int getRoleid() {
-		return roleid;
+	public Role getRoleid() {
+		return role;
 	}
 
-	public void setRoleid(int roleid) {
-		this.roleid = roleid;
+	public void setRoleid(Role role) {
+		this.role = role;
 	}
 
 	public boolean isEnabled() {

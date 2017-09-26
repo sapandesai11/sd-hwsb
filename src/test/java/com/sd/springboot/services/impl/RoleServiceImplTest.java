@@ -1,8 +1,5 @@
 package com.sd.springboot.services.impl;
 
-
-import static org.assertj.core.api.Assertions.assertThat;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -13,42 +10,25 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import com.sd.springboot.config.Application;
 import com.sd.springboot.dto.Role;
-import com.sd.springboot.dto.User;
-import com.sd.springboot.services.UserService;
-
-
+import com.sd.springboot.services.RoleService;
 
 @SpringBootTest(classes={Application.class})
 @RunWith(SpringRunner.class)
 @TestPropertySource(locations= "classpath:application-test.properties")
-public class UserServiceImplTest {
-	
+public class RoleServiceImplTest {
 	
 	@Autowired
-	UserService userService;
-	
-	private User user;
-	
+	RoleService roleService;
+	private Role role;
 	@Before
 	public void init() {
-		Role role= new Role();
-		role.setRoleId(1);
+		role = new Role();
 		role.setRoleName("ADMIN");
-		user = new User();
-		user.setUsername("Sapan");
-		user.setPassword("admin");
-		user.setRoleid(role);
 	}
 	
 	@Test
-	public void testSaveUser() {
-		userService.save(user);
+	public void testRoleSaveService() {
+		roleService.save(role);
 	}
-	
-	//@Test
-	public void testFindAllUsers() {
-		assertThat(userService.findByUsername("admin").getUsername().equalsIgnoreCase("admin"));
-	}
-	
 
 }
