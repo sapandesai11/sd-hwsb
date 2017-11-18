@@ -17,7 +17,7 @@ import com.sd.springboot.services.UserService;
 
 
 
-//@SpringBootTest(classes={Application.class})
+@SpringBootTest(classes={Application.class})
 @RunWith(SpringRunner.class)
 public class UserServiceImplTest {
 	
